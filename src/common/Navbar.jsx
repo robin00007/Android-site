@@ -33,7 +33,7 @@ const Navbar = () => {
           <NavLink to="/" className="navbar-links">
             Home
           </NavLink>
-          <NavLink to="/Schedule" className="navbar-links">
+          <NavLink to="/schedule" className="navbar-links">
             Schedule
           </NavLink>
           <NavLink to="/speakers" className="navbar-links">
@@ -43,9 +43,10 @@ const Navbar = () => {
             Treasure
           </NavLink>
           <NavLink to="/login" className="navbar-links">
-            Login/singIN
+            Sign Up
           </NavLink>
         </div>
+
         <div className="mobileNavbar">
           <img src={more} alt="" />
           <div className="columnNavbar">
@@ -55,7 +56,6 @@ const Navbar = () => {
             <a className="calender" href="">
               <img src={calender} alt="" />
             </a>
-
             <a className="contact" href="">
               <img src={contact} alt="" />
             </a>

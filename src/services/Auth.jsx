@@ -1,13 +1,12 @@
-import React, { useState, MenuItem, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 
 import "../styles/css/auth.css";
 
 import loginPage from "../styles/images/loginPage.svg";
 import mail from "../styles/images/mail.svg";
 import lock from "../styles/images/lock.svg";
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
 
 const Auth = () => {
   const [user, setUser] = useState("");
@@ -30,10 +29,12 @@ const Auth = () => {
     setEmail("");
     setPassword("");
   };
+
   const clearErrors = () => {
     setEmailError("");
     setPasswordError("");
   };
+
   const handleLogin = () => {
     clearErrors();
     Fire.auth()
@@ -51,6 +52,7 @@ const Auth = () => {
         }
       });
   };
+
   const handleSignUp = () => {
     clearErrors();
     Fire.auth()
@@ -67,9 +69,11 @@ const Auth = () => {
         }
       });
   };
+
   const handleLogout = () => {
     Fire.auth().signOut();
   };
+
   const authListener = () => {
     Fire.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -80,35 +84,34 @@ const Auth = () => {
       }
     });
   };
-  useEffect(() => {
-    authListener();
-  }, []);
+
+  useEffect(() => authListener());
 
   return (
     <div className="editor">
       <div className="loginContainer">
-        <div className="sigin_card">
+        <div className="sign-in-card">
           <form>
-            <h1>{hasAccount ? "Sign In" : "Sign Up"}</h1>
-            <br />
+            <h1>{hasAccount ? "Log In" : "Sign Up"}</h1>
+            <br/>
+
             <div>
-              {" "}
-              Email Address : <br />
+              Email Address:
               <div className="inputContainer">
-                <img src={mail} alt="" />
+                <img src={mail} alt=""/>
                 <input
                   type="email"
                   name="email"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
-                  placeholder="Enter email id "
+                  placeholder="Enter Email ID"
                   required
-                ></input>
+                />
               </div>
             </div>
+
             <div>
-              {" "}
-              Password : <br />
+              Password:
               <div className="inputContainer">
                 <img src={lock} alt="" />
                 <input
@@ -116,43 +119,37 @@ const Auth = () => {
                   name="password"
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
-                  placeholder="Enter password  "
+                  placeholder="Enter Password"
                   required
-                ></input>
+                />
               </div>
             </div>
+
             <div>
               {hasAccount ? (
                 <>
                   <button className="loginSubmitButton" onClick={handleLogin}>
-                    Sign In{" "}
+                    Log In
                   </button>
-                  <div className="hr"></div>{" "}
-                  <p
-                    style={{
+                  <div className="hr"/>
+                  <p style={{
                       backgroundColor: "transparent",
                       display: "flex",
                       justifyContent: "center",
                       color: "white",
                     }}
                   >
-                    {" "}
-                    Don't have a account ?{" "}
-                    <span
-                      onClick={() => {
-                        setHasAccount(false);
-                      }}
-                    >
-                      {" "}
-                      Sign Up{" "}
+                    Don't have an account?
+                    <span style={{paddingLeft: "4px", textDecoration: "underline"}} onClick={() => setHasAccount(false)}>
+                      Sign Up
                     </span>
                   </p>
                 </>
               ) : (
                 <>
                   <button className="loginSubmitButton" onClick={handleSignUp}>
-                    Sign Up{" "}
-                  </button>{" "}
+                    Sign Up
+                  </button>
                   <div className="hr"></div>
                   <p
                     style={{
@@ -162,14 +159,9 @@ const Auth = () => {
                       color: "white",
                     }}
                   >
-                    {" "}
-                    Have a account ?{" "}
-                    <span
-                      onClick={() => {
-                        setHasAccount(true);
-                      }}
-                    >
-                      Sign In
+                    Have a account?
+                    <span style={{paddingLeft: "4px", textDecoration: "underline"}} onClick={() => setHasAccount(true)}>
+                      Log In
                     </span>
                   </p>
                 </>

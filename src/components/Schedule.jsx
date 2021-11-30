@@ -5,15 +5,14 @@ import "../styles/css/timeline.css";
 const Home = () => {
 	return (
 		<div className="schedule-section">
-			  <div>
-      <h1>Schedule </h1>
-        <h2>Timeline that shows you where you are !!!!!! </h2>
+		  <div>
+            <h1>Schedule</h1>
+            <h2>Pick yourself up, dust yourself off and Start!</h2>
+          </div>
 
-      </div>
-     
-      <div className="TimelineContainer">
-          <Timeline/>
-        </div>
+	      <div className="TimelineContainer">
+	        <Timeline/>
+	      </div>
 		</div>
 	);
 };

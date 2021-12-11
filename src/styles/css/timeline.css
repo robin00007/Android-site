@@ -148,6 +148,48 @@ header h1 {
   width: 4px;
   background: #d7e4ed;
 }
+.notes {
+  color: #13BB5E;
+
+  border: 2px solid #13BB5E;
+  padding: 3px 7px;
+  margin-right: 10px;
+
+  text-align: center;
+  font-size: 12px;
+}
+.video {
+  color: white;
+  background-color: #13BB5E;
+
+  border: 2px solid #13BB5E;
+  padding: 3px 7px;
+  margin-right: 10px;
+
+  text-align: center;
+  font-size: 12px;
+}
+.notes:hover {
+  color: white;
+  background-color: #13BB5E;
+  border: 2px solid #13BB5E;
+  padding: 3px 7px;
+  margin-right: 10px;
+
+  text-align: center;
+  font-size: 12px;
+}
+.video:hover {
+  color: #13BB5E;
+  border: 2px solid #13BB5E;
+  padding: 3px 7px;
+  margin-right: 10px;
+
+  text-align: center;
+  font-size: 12px;
+  background-color: transparent;
+}
+
 @media only screen and (min-width: 1170px) {
   #cd-timeline {
     margin-top: 3em;

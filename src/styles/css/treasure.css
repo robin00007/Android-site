@@ -97,4 +97,13 @@
     transform: translateY(50%);
     padding: 50px 100px;
   }
+
+  .listItem p {
+    font-size: 12px;
+  }
+  .leaderboard h1 {
+    font-size: 18px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
 }

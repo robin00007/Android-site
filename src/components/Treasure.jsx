@@ -6,10 +6,18 @@ import poster from "../styles/images/winner.png";
 
 const Treasure = () => {
   const [list, setList] = useState([
-    { No: 1, TeamName: "something", status: "submitted" },
-    { No: 2, TeamName: "something2", status: "submitted2" },
-    { No: 3, TeamName: "something3", status: "submitted3" },
-    { No: 4, TeamName: "something4", status: "submitted4" },
+    { No: "S.NO", TeamName: "Team Name", status: "Status" },
+    { No: 1, TeamName: "Programatically_Entangled", status: "submitted" },
+    { No: 2, TeamName: "4L4P", status: "submitted" },
+    { No: 3, TeamName: "Exception", status: "submitted" },
+    { No: 5, TeamName: "IRENIC_Spirits", status: "submitted" },
+    { No: 6, TeamName: "TeaM HunTers", status: "submitted" },
+    { No: 7, TeamName: "Abstract Devs", status: "submitted" },
+    { No: 8, TeamName: "EMULATORS ", status: "submitted" },
+    { No: 9, TeamName: "Alien to Android", status: "submitted" },
+    { No: 10, TeamName: "Hackshaw", status: "submitted" },
+    { No: 11, TeamName: "Infinity", status: "submitted" },
+    { No: 12, TeamName: "Orario", status: "submitted" },
   ]);
 
   return (

@@ -12,16 +12,16 @@ import Speakers from "./components/Speakers";
 import "./styles/css/app.css";
 const App = () => {
   return (
-    <React.Fragment  >
+    <React.Fragment>
       <NavBar />
       <main className="body">
         <Switch>
-          <Route  exact path="/"   component={Home} />
-          <Route  exact path="/schedule" component={Schedule} />
-          <Route  exact path="/login" component={Auth} />
-          <Route  exact path="/hackathon" component={Treasure} />
-          <Route  exact path="/speakers" component={Speakers} />
-          <Redirect to="/notFound" />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/schedule" component={Schedule} />
+          <Route exact path="/login" component={Auth} />
+          <Route exact path="/hackathon" component={Treasure} />
+          <Route exact path="/speakers" component={Speakers} />
+          <Redirect to="/" />
         </Switch>
       </main>
       <AboutUs />
